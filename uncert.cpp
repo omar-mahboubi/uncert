@@ -87,9 +87,9 @@ int main() {
     int choice;
     cout << "Welcome to Uncertainty Calculator!\n" ;
     cout << "Please note that this is a work in progress.\n" ;
-    cout << "Please choose the calculation type (type the number of the type in question)" ;
-    cout << "(1) Single variable x" ;
-    cout << "(2) Sum of two variables x1 and x2" ;
+    cout << "Please choose the calculation type (type the number of the type in question)\n" ;
+    cout << "(1) Single variable x\n" ;
+    cout << "(2) Sum of two variables x1 and x2\n" ;
     cin >> choice;
     cout << "----------------------------------------------------------------------------------------------------\n";
     switch (choice) {
