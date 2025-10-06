@@ -7,23 +7,6 @@ struct Result {
     float delta;
 };
 
-float avg (int n, float array[200]) {
-    float sum = 0;
-    for (int i=0;i<n;i++){
-        sum += array[i];
-    }
-    return (sum/float(n));
-}
-
-float delta (int n, float sys, float avg, float array[200]) {
-    float random = 0;
-    for (int i=0; i<n; i++) {
-        random += pow((avg-array[i]),2);
-    }
-    random = random / 4.0;
-    return sqrt(pow(sys,2)+pow(random,2));
-}
-
 Result calculate (int n, float sys, float array[200]) {
     Result r;
     float sum = 0;
@@ -47,7 +30,7 @@ void single () {
     cout << "Please input the number of measurements.\n"; cin >> n;
     cout << "Please input the systematic uncertainty (in the same unit as the measurements)\n"; cin >> sys;
     cout << "Please input the measurements, one-by-one:\n";
-    for (int i=0;i<n;i++) {
+    for (int i=0 ; i<n ; i++) {
         cin >> array[i];
     }
     cout << "----------------------------------------------------------------------------------------------------\n";
@@ -56,13 +39,14 @@ void single () {
 }
 
 void sum (char sign) {
-    int n1, n2, sys1, sys2;
+    int n1, n2;
+    float sys1, sys2;
     float array1[200], array2[200];
     float x, dx;
     cout << "Input the number of measurements for x1.\n"; cin >> n1;
     cout << "Please input the systematic uncertainty for x1 (in the same unit as the measurements)\n"; cin >> sys1;
     cout << "Please input the measurements of x1, one-by-one:\n";
-    for (int i=0;i<n1;i++) {
+    for (int i=0 ; i<n1 ; i++) {
         cin >> array1[i];
     }
     cout << "----------------------------------------------------------------------------------------------------\n";
