@@ -16,12 +16,12 @@ CXX_WIN := x86_64-w64-mingw32-
 CXX_ARM := aarch64-linux-gnu-
 
 # Default target
-all: $(TARGET_LINUX)
+all: linux win arm64
 
 # Native build
-$(TARGET_LINUX): $(SRC)
-	@printf "  %-8s %s\n" "CC" "$@"
-	@$(CXX)g++ $(CXXFLAGS) -o $@ $(SRC)
+linux: $(SRC)
+	@printf "  %-8s %s\n" "CC" "$(TARGET_LINUX)"
+	@$(CXX)g++ $(CXXFLAGS) -o $(TARGET_LINUX) $(SRC)
 
 # Windows build
 win: $(SRC)
