@@ -5,6 +5,7 @@ CXX := x86_64-linux-gnu-
 CXXFLAGS :=
 CXXFLAGS_WIN := -static -static-libstdc++ -static-libgcc
 SRC := uncert.cpp
+BUILDDIR := build
 
 # Targets
 TARGET_LINUX := uncert
@@ -19,23 +20,27 @@ CXX_ARM := aarch64-linux-gnu-
 all: linux win arm64
 
 # Native build
-linux: $(SRC)
+linux: $(SRC) | build
 	@printf "  %-8s %s\n" "CC" "$(TARGET_LINUX)"
-	@$(CXX)g++ $(CXXFLAGS) -o $(TARGET_LINUX) $(SRC)
+	@$(CXX)g++ $(CXXFLAGS) -o $(BUILDDIR)/$(TARGET_LINUX) $(SRC)
 
 # Windows build
-win: $(SRC)
+win: $(SRC) | build
 	@printf "  %-8s %s\n" "CC" "$(TARGET_WIN)"
-	@$(CXX_WIN)g++ $(CXXFLAGS_WIN) -o $(TARGET_WIN) $(SRC)
+	@$(CXX_WIN)g++ $(CXXFLAGS_WIN) -o $(BUILDDIR)/$(TARGET_WIN) $(SRC)
 	@printf "  %-8s %s\n" "STRIP" "$(TARGET_WIN)"
-	@$(CXX_WIN)strip $(TARGET_WIN)
+	@$(CXX_WIN)strip $(BUILDDIR)/$(TARGET_WIN)
 
 # ARM64 build
-arm64: $(SRC)
+arm64: $(SRC) | build
 	@printf "  %-8s %s\n" "CC" "$(TARGET_ARM)"
-	@$(CXX_ARM)g++ $(CXXFLAGS) -o $(TARGET_ARM) $(SRC)
+	@$(CXX_ARM)g++ $(CXXFLAGS) -o $(BUILDDIR)/$(TARGET_ARM) $(SRC)
 
 # Clean
 clean:
 	@printf "  %-8s %s\n" "CLEAN"
-	@rm -f $(TARGET_LINUX) $(TARGET_WIN) $(TARGET_ARM)
+	@rm -rf $(BUILDDIR)/
+
+# Build
+build:
+	mkdir -p $(BUILDDIR)
