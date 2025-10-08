@@ -118,7 +118,7 @@ void log_product() {
     print_line();
     Result x1 = calculate (n1, sys1, array1);
     Result x2 = calculate (n2, sys2, array2);
-    x = (a*pow(x1.avg,2)) * (b*pow(x2.avg,2)) + c ;
+    x = (a * pow(x1.avg , power1)) * (b *pow(x2.avg , power2)) + c ;
     dx = x * ((x1.delta * power1 / x1.avg) + (x2.delta * power2 / x2.avg)) ;
     cout << "The value of z, adjusted for uncertainty, is: " << x << " + " << dx << endl;
 }
