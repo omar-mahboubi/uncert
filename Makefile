@@ -4,7 +4,7 @@
 CXX := x86_64-linux-gnu-
 CXXFLAGS :=
 CXXFLAGS_WIN := -static -static-libstdc++ -static-libgcc
-SRC := uncert.cpp
+SRC := main.cpp terminal.cpp calc.cpp single.cpp sum.cpp log.cpp
 BUILDDIR := build
 
 # Targets
