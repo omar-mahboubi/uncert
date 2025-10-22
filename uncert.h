@@ -6,7 +6,7 @@ struct Result {
     float delta;
 };
 
-void print_line();
+void print_line(char c = '-');
 
 Result calculate (int n, float sys, float array[200]);
 
