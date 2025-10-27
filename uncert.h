@@ -12,6 +12,6 @@ Result calculate (int n, float sys, float array[200]);
 
 void single ();
 void sum (char sign);
-void log_product();
+void log(char sign);
 
 #endif // UNCERT

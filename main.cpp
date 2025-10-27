@@ -10,12 +10,14 @@ int main() {
     cout << "(1) Single variable x\n" ;
     cout << "(2) Sum of two variables x1 and x2\n" ;
     cout << "(3) Product: z = ax^n * bx^k + c (Logarithmic method)\n" ;
+    cout << "(4) Ratio: z = (ax^n / bx^k) + c (Logarithmic method)\n" ;
     cin >> choice;
     print_line();
     switch (choice) {
         case (1): single(); break;
         case (2): sum('+'); break;
-        case (3): log_product(); break;
+        case (3): log('*'); break;
+        case (4): log('/'); break;
         default:
             cout << "Please choose a valid value!" << endl; return 1;
     }
