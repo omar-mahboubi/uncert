@@ -1,6 +1,8 @@
 #ifndef UNCERT
 #define UNCERT
 
+#define ARRAY_LIMIT 200
+
 struct Result {
     float avg;
     float delta;

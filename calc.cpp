@@ -2,7 +2,7 @@
 #include "uncert.hpp"
 using namespace std;
 
-Result calculate (int n, float sys, float array[200]) {
+Result calculate (int n, float sys, float array[ARRAY_LIMIT]) {
     Result r;
     float sum = 0;
     float random = 0;

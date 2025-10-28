@@ -5,7 +5,7 @@ using namespace std;
 
 void single () {
     int n;
-    float array[200];
+    float array[ARRAY_LIMIT];
     float sys;
     cout << "Please input the number of measurements.\n"; cin >> n;
     cout << "Please input the systematic uncertainty (in the same unit as the measurements)\n"; cin >> sys;
@@ -21,7 +21,7 @@ void single () {
 void sum (char sign) {
     int n1, n2;
     float sys1, sys2;
-    float array1[200], array2[200];
+    float array1[ARRAY_LIMIT], array2[ARRAY_LIMIT];
     float x, dx;
     cout << "Input the number of measurements for x1.\n"; cin >> n1;
     cout << "Please input the systematic uncertainty for x1 (in the same unit as the measurements)\n"; cin >> sys1;
@@ -50,7 +50,7 @@ void sum (char sign) {
 void log(char sign) {
     int n1, n2, power1, power2;
     float sys1, sys2, a, b, c;
-    float array1[200], array2[200];
+    float array1[ARRAY_LIMIT], array2[ARRAY_LIMIT];
     float x, dx;
     cout << "Please input a, b, c, n, k in order\n" ;
     cin >> a; cin >> b; cin >> c; cin >> power1; cin >> power2;
