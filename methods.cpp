@@ -78,7 +78,7 @@ void log(char sign) {
             break;
         case ('/'):
             x = ((a * pow(x1.avg , power1)) / (b *pow(x2.avg , power2))) + c ;
-            dx = x * ((x1.delta * power1 / x1.avg) + (x2.delta * power2 / x2.avg)) ;  //TODO: figure out if a + or - should be used here
+            dx = x * ((x1.delta * power1 / x1.avg) + (x2.delta * power2 / x2.avg)) ;
             cout << "The value of z, adjusted for uncertainty, is: " << x << " + " << dx << endl;
     }
 }
